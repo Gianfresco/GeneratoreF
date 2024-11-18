@@ -1,29 +1,14 @@
-﻿open System
-open System.IO
-open System.Text
-
-let letturaFile (percorso:string) : string =
-    try
-        let contenuto = File.ReadAllText(percorso)
-        contenuto
-    with
-        | :? IOException as e ->
-            e.Message
-        | e ->
-            e.Message
-
-let getTemplate : string =
-    let template = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <quiz>
   <!-- question: 0  -->
-  <question type=\"coderunner\">
+  <question type="coderunner">
     <name>
       <text><![CDATA[]]></text>
     </name>
-    <questiontext format=\"html\">
+    <questiontext format="html">
       <text><![CDATA[]]></text>
     </questiontext>
-    <generalfeedback format=\"html\">
+    <generalfeedback format="html">
       <text><![CDATA[]]></text>
     </generalfeedback>
     <defaultgrade>1</defaultgrade>
@@ -76,41 +61,4 @@ let getTemplate : string =
     <testcases></testcases>
   </question>
 
-</quiz>"
-    template
-
-let inserisciTesto (testo:string) (aggiunta:string) (posizione:int) : string =
-    if posizione < 0 || posizione > testo.Length then
-        printfn "Errore: posizione al di fuori dei limiti del testo"
-        testo
-    else
-        let sx = testo.Substring(0, posizione)
-        let dx = testo.Substring(posizione)
-        sx + aggiunta + dx
-
-[<EntryPoint>]
-
-let main argv =
-
-    File.WriteAllText("out.xml", getTemplate)
-
-    let testoConsegna = (letturaFile argv.[1])
-    let testoCodice = (letturaFile argv.[2])
-
-    // let insConsegna = inserisciTesto asciiString testoConsegna 133
-    // let insCodice = inserisciTesto insConsegna testoCodice (1053 + testoConsegna.Length)
-
-    // try
-    //     File.WriteAllText(percorsoFileOut, insCodice)
-    // with
-    //     | :? UnauthorizedAccessException ->
-    //     printfn "Accesso negato al percorso '%s'." percorsoFileOut
-    //     | :? DirectoryNotFoundException ->
-    //         printfn "Il file specificato '%s' non esiste." percorsoFileOut
-    //     | :? IOException as ex ->
-    //         printfn "Errore di I/O durante la scrittura del file: %s" ex.Message
-    //     | ex ->
-    //         printfn "Si è verificato un errore inatteso: %s" ex.Message
-
-
-    0
+</quiz>
