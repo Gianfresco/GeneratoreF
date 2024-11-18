@@ -3,11 +3,11 @@
   <!-- question: 0  -->
   <question type="coderunner">
     <name>
-      <text><![CDATA[uihtonicaueyionbyònhu]]></text>
+      <text><![CDATA[]]></text>
     </name>
     <questiontext format="html">
       <text><![CDATA[]]></text>
-    </questiontext>
+    </quesuihtonicaueyionbyònhutiontext>
     <generalfeedback format="html">
       <text><![CDATA[]]></text>
     </generalfeedback>
@@ -15,7 +15,7 @@
     <penalty>0</penalty>
     <hidden>0</hidden>
     <idnumber></idnumber>
-    <coderunnertype></coderunnertype>
+    <coderunnertype>UNCERTAIN</coderunnertype>
     <prototypetype>0</prototypetype>
     <allornothing>1</allornothing>
     <penaltyregime>10, 20, ...</penaltyregime>
@@ -31,7 +31,7 @@
     <template></template>
     <iscombinatortemplate></iscombinatortemplate>
     <allowmultiplestdins></allowmultiplestdins>
-    <answer><![CDATA[uictoiuewpòircuoiewtuvopiun
+    <answer><![CDATA[]]></auictoiuewpòircuoiewtuvopiun
 liurantio4ch
     lirnhvgpo
         lirvhgnojioòev
@@ -39,7 +39,7 @@ liurantio4ch
         iuvgnoew
         elriuvnhoiwp
 
-oriatvnp]]></answer>
+oriatvnpnswer>
     <validateonsave>1</validateonsave>
     <testsplitterre></testsplitterre>
     <language></language>
