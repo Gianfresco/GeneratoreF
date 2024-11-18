@@ -88,6 +88,21 @@ let inserisciTesto (testo:string) (aggiunta:string) (posizione:int) : string =
         let dx = testo.Substring(posizione)
         sx + aggiunta + dx
 
+let getTipoFile (file:string) : string =
+    let estensione = Path.GetExtension(file)
+    match estensione with
+    | ".txt" -> "UNCERTAIN"
+    | ".graph" -> "undirected_graph"
+    | ".java" -> "java_program"
+    | ".m" -> "octave_function"
+    | ".pas" -> "pascal_"
+    | ".js" -> "node_js"
+    | ".cpp" -> "cpp_"
+    | ".php" -> "php"
+    | ".sql" -> "sql"
+    | ".c" -> "c_"
+    | _ -> "Undefined"
+
 [<EntryPoint>]
 
 let main argv =
