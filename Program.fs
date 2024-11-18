@@ -92,13 +92,19 @@ let inserisciTesto (testo:string) (aggiunta:string) (posizione:int) : string =
 
 let main argv =
 
-    File.WriteAllText("out.xml", getTemplate)
+    let testoConsegna = (letturaFile argv.[0])
+    let testoCodice = (letturaFile argv.[1])
 
-    let testoConsegna = (letturaFile argv.[1])
-    let testoCodice = (letturaFile argv.[2])
+    let program : bool = testoCodice.Contains("main")   // usato per determinare se il codice è una funzione o un programma
+    
+    let mutable pos = 0
 
-    // let insConsegna = inserisciTesto asciiString testoConsegna 133
-    // let insCodice = inserisciTesto insConsegna testoCodice (1053 + testoConsegna.Length)
+    pos <- pos + 133        // "cc xvv" -Romeo
+    let insConsegna = inserisciTesto getTemplate testoConsegna pos
+    pos <- pos + 920 + testoConsegna.Length
+    let insCodice = inserisciTesto insConsegna testoCodice pos
+
+    File.WriteAllText("out.xml", insCodice)
 
     // try
     //     File.WriteAllText(percorsoFileOut, insCodice)
