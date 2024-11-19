@@ -5,8 +5,9 @@ open System.IO
 open System.Text
 
 // funzione che fornisce il testo con i campi vuoti
-let getTemplate : string =
-    let template = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+let getTemplate: string =
+    let template =
+        "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <quiz>
   <!-- question: 0  -->
   <question type=\"coderunner\">
@@ -70,41 +71,42 @@ let getTemplate : string =
   </question>
 
 </quiz>"
+
     template
 
 // funzione che legge il file dato come argomento e ne restuisce il contenuto come stringa unica
-let letturaTesto (percorso:string) : string =
+let letturaTesto (percorso: string) : string =
     try
         let contenuto = File.ReadAllText(percorso)
         contenuto
     with
-        | :? IOException as e ->
-            eprintfn "Errore di I/O"
-            e.Message |> ignore
-            null
-        | e ->
-            eprintfn "Errore inatteso"
-            e.Message |> ignore
-            null
+    | :? IOException as e ->
+        eprintfn "Errore di I/O"
+        e.Message |> ignore
+        null
+    | e ->
+        eprintfn "Errore inatteso"
+        e.Message |> ignore
+        null
 
 // funzione che legge il file dato come argomento e ne restuisce il contenuto come array di stringhe
-let letturaStringhe (percorso:string) : string[] =
+let letturaStringhe (percorso: string) : string[] =
     try
-      let contenuto = File.ReadAllLines(percorso)
-      contenuto
+        let contenuto = File.ReadAllLines(percorso)
+        contenuto
     with
-      | :? IOException as e ->
-          eprintfn "Errore di I/O"
-          e.Message |> ignore
-          null
-      | e ->
-          eprintf "Errore inatteso"
-          e.Message |> ignore
-          null
+    | :? IOException as e ->
+        eprintfn "Errore di I/O"
+        e.Message |> ignore
+        null
+    | e ->
+        eprintf "Errore inatteso"
+        e.Message |> ignore
+        null
 
 
 // funzione per l'inserimento del testo (con controllo della posizione)
-let inserisciTesto (testo:string) (aggiunta:string) (posizione:int) : string =
+let inserisciTesto (testo: string) (aggiunta: string) (posizione: int) : string =
     if posizione < 0 || posizione > testo.Length then
         printfn "Errore: posizione al di fuori dei limiti del testo"
         testo
@@ -115,10 +117,11 @@ let inserisciTesto (testo:string) (aggiunta:string) (posizione:int) : string =
         sx + aggiunta + dx
 
 // funzione che, a seconda dell'estesione del nome del file dato in argomento, restituisce il tipo di file
-let getTipoFile (file:string) : string =
+let getTipoFile (file: string) : string =
     let estensione = Path.GetExtension(file)
+
     match estensione with
-    | ".txt" -> "UNCERTAIN"           // incerto, perchè .txt poterbbe essere un directed_graph o un undirected_graph, quindi è necessario l'intervento dell'utente.
+    | ".txt" -> "UNCERTAIN" // incerto, perchè .txt poterbbe essere un directed_graph o un undirected_graph, quindi è necessario l'intervento dell'utente.
     | ".graph" -> "undirected_graph"
     | ".java" -> "java_program"
     | ".m" -> "octave_function"
