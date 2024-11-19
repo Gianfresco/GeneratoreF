@@ -29,3 +29,6 @@ Temporary ASP.NET Files/
 .tye/
 .globalconfig
 .fake
+codice.*
+*.txt
+*.xml

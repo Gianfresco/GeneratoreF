@@ -8,17 +8,17 @@
     ".NETCoreApp,Version=v8.0": {
       "GeneratoreF/1.0.0": {
         "dependencies": {
-          "FSharp.Core": "8.0.102"
+          "FSharp.Core": "8.0.403"
         },
         "runtime": {
           "GeneratoreF.dll": {}
         }
       },
-      "FSharp.Core/8.0.102": {
+      "FSharp.Core/8.0.403": {
         "runtime": {
           "lib/netstandard2.1/FSharp.Core.dll": {
             "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.1.224.8102"
+            "fileVersion": "8.4.324.50901"
           }
         },
         "resources": {
@@ -71,12 +71,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "FSharp.Core/8.0.102": {
+    "FSharp.Core/8.0.403": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ClYwIHp7isdp4iUUA3efta+dDf/XOFgJs+euM5Zf6iGYypNnlf9JDdUL7bll8QCXP1B5rXg4FySLGY7evYf9Sw==",
-      "path": "fsharp.core/8.0.102",
-      "hashPath": "fsharp.core.8.0.102.nupkg.sha512"
+      "sha512": "sha512-t1Pvv2++3zMQKKNuiQc1Lz4TCdaBajgG4mLhOE8AoFzborHQ/JbjIaJr6Mrq8m2z15KLu4r6Qz7E3oeACpljTg==",
+      "path": "fsharp.core/8.0.403",
+      "hashPath": "fsharp.core.8.0.403.nupkg.sha512"
     }
   }
 }
