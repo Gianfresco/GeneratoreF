@@ -35,11 +35,11 @@ let main argv =
     let mutable pos = 0
     pos <- pos + 133
     let insTitolo = inserisciTesto getTemplate testoTitolo pos
-    pos <- pos + 210 + testoTitolo.Length       // "cc xvv" -Romeo
+    pos <- pos + 77 + testoTitolo.Length       // "cc xvv" -Romeo
     let insConsegna = inserisciTesto insTitolo testoConsegna pos
     pos <- pos + 251 + testoConsegna.Length
     let insTipo = inserisciTesto insConsegna tipoDomanda pos
-    pos <- pos + 569 + testoConsegna.Length
+    pos <- pos + 411 + testoConsegna.Length
     let insCodice = inserisciTesto insTipo testoCodice pos
 
     // scrittura testo completo su file XML
