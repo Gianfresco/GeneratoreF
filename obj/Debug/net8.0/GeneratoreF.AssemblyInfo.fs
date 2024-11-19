@@ -10,7 +10,7 @@ open System.Reflection
 [<assembly: System.Reflection.AssemblyCompanyAttribute("GeneratoreF")>]
 [<assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")>]
 [<assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")>]
-[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c1a84ba8b25bb4a427f3a647166014b7285b88f")>]
+[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a9ac5ec3e0a88eaa554b359a3882df547b40ba12")>]
 [<assembly: System.Reflection.AssemblyProductAttribute("GeneratoreF")>]
 [<assembly: System.Reflection.AssemblyTitleAttribute("GeneratoreF")>]
 [<assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")>]

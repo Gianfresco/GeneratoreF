@@ -11,11 +11,10 @@ open Functions
 let main argv =
 
     // lettura testi
-    let testoConsegna = ( argv.[0])
+    let testoTitoloConsegna = (letturaStringhe argv.[0])
     let testoCodice = (letturaTesto argv.[1])
 
-    // composizione tipo domanda a seconda del contenuto del codice
-    // solo in presenza di incertezze (terminanti con '_')
+    // composizione tipo domanda a seconda del contenuto del codice solo in presenza di incertezze (terminanti con '_')
     let mutable tipoDomanda = getTipoFile(argv.[1])
     if tipoDomanda.Equals("UNCERTAIN") then
         printfn "Attenzione! '%s' è un file di testo: sarà necessaria la modifica manuale del linguaggio su Moodle." argv.[1]
@@ -26,10 +25,18 @@ let main argv =
         else
             tipoDomanda <- tipoDomanda + "function"
 
+    // estrae il primo elemento ovvero il titolo della domanda (prima riga file)
+    let testoTitolo = testoTitoloConsegna[0]
+    // estrae e concatena il resto degli elementi, saltanto i primi due (titolo e 'newline' di separazione)
+    let testoConsegna = String.concat ""(testoTitoloConsegna |> Array.skip 2)
+
+
     // aggiunta stringhe con punto di inserimento "pos" variabile
     let mutable pos = 0
-    pos <- pos + 210        // "cc xvv" -Romeo
-    let insConsegna = inserisciTesto getTemplate testoConsegna pos
+    pos <- pos + 133
+    let insTitolo = inserisciTesto getTemplate testoTitolo pos
+    pos <- pos + 210 + testoTitolo.Length       // "cc xvv" -Romeo
+    let insConsegna = inserisciTesto insTitolo testoConsegna pos
     pos <- pos + 251 + testoConsegna.Length
     let insTipo = inserisciTesto insConsegna tipoDomanda pos
     pos <- pos + 569 + testoConsegna.Length
