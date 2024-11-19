@@ -39,7 +39,7 @@ let main argv =
     let insConsegna = inserisciTesto insTitolo testoConsegna pos
     pos <- pos + 251 + testoConsegna.Length
     let insTipo = inserisciTesto insConsegna tipoDomanda pos
-    pos <- pos + 411 + testoConsegna.Length
+    pos <- pos + 592 + tipoDomanda.Length
     let insCodice = inserisciTesto insTipo testoCodice pos
 
     // scrittura testo completo su file XML
