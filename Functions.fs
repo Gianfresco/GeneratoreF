@@ -72,8 +72,8 @@ let getTemplate : string =
 </quiz>"
     template
 
-// funzione che legge il file dato come argomento e ne restuisce il contenuto
-let letturaFile (percorso:string) : string =
+// funzione che legge il file dato come argomento e ne restuisce il contenuto come stringa unica
+let letturaTesto (percorso:string) : string =
     try
         let contenuto = File.ReadAllText(percorso)
         contenuto
@@ -82,8 +82,24 @@ let letturaFile (percorso:string) : string =
             eprintfn "Errore di I/O"
             e.Message
         | e ->
-            eprintfn "Errore generale"
+            eprintfn "Errore inatteso"
             e.Message
+
+// funzione che legge il file dato come argomento e ne restuisce il contenuto come array di stringhe
+let letturaStringhe (percorso:string) : string[] =
+    try
+      let contenuto = File.ReadAllLines(percorso)
+      contenuto
+    with
+      | :? IOException as e ->
+          eprintfn "Errore di I/O"
+          e.Message |> ignore
+          null
+      | e ->
+          eprintf "Errore inatteso"
+          e.Message |> ignore
+          null
+
 
 // funzione per l'inserimento del testo (con controllo della posizione)
 let inserisciTesto (testo:string) (aggiunta:string) (posizione:int) : string =

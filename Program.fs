@@ -11,8 +11,8 @@ open Functions
 let main argv =
 
     // lettura testi
-    let testoConsegna = (letturaFile argv.[0])
-    let testoCodice = (letturaFile argv.[1])
+    let testoConsegna = ( argv.[0])
+    let testoCodice = (letturaTesto argv.[1])
 
     // composizione tipo domanda a seconda del contenuto del codice
     // solo in presenza di incertezze (terminanti con '_')
