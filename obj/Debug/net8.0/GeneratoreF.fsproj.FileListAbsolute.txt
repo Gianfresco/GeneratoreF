@@ -28,3 +28,11 @@
 /home/gianfranco/GeneratoreF/obj/Debug/net8.0/GeneratoreF.pdb
 /home/gianfranco/GeneratoreF/obj/Debug/net8.0/GeneratoreF.genruntimeconfig.cache
 /home/gianfranco/GeneratoreF/obj/Debug/net8.0/ref/GeneratoreF.dll
+/home/gianfranco/Documenti/GeneratoreF/obj/Debug/net8.0/GeneratoreF.fsproj.AssemblyReference.cache
+/home/gianfranco/Documenti/GeneratoreF/obj/Debug/net8.0/GeneratoreF.AssemblyInfoInputs.cache
+/home/gianfranco/Documenti/GeneratoreF/obj/Debug/net8.0/GeneratoreF.AssemblyInfo.fs
+/home/gianfranco/Documenti/GeneratoreF/obj/Debug/net8.0/GeneratoreF.fsproj.CoreCompileInputs.cache
+/home/gianfranco/Documenti/GeneratoreF/obj/Debug/net8.0/GeneratoreF.sourcelink.json
+/home/gianfranco/Documenti/GeneratoreF/obj/Debug/net8.0/GeneratoreF.dll
+/home/gianfranco/Documenti/GeneratoreF/obj/Debug/net8.0/refint/GeneratoreF.dll
+/home/gianfranco/Documenti/GeneratoreF/obj/Debug/net8.0/GeneratoreF.pdb

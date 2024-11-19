@@ -1,11 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "uMniRX+d9gGQxFHoRL2NepVPdNfL049lTIUZooRcaO1VALmmlSEcWKiH4W+wnna1Dv0CUmDplemJX52DcOcO6w==",
+  "dgSpecHash": "FcHUTuq8q0c=",
   "success": true,
-  "projectFilePath": "/home/gianfranco/GeneratoreF/GeneratoreF.fsproj",
+  "projectFilePath": "/home/gianfranco/Documenti/GeneratoreF/GeneratoreF.fsproj",
   "expectedPackageFiles": [
-    "/home/gianfranco/.nuget/packages/fsharp.core/8.0.102/fsharp.core.8.0.102.nupkg.sha512",
-    "/home/gianfranco/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.8/microsoft.aspnetcore.app.ref.8.0.8.nupkg.sha512"
+    "/home/gianfranco/.nuget/packages/fsharp.core/8.0.403/fsharp.core.8.0.403.nupkg.sha512"
   ],
   "logs": []
 }

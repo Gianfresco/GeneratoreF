@@ -1,8 +1,10 @@
-﻿open System
+﻿module Program
+
+open System
 open System.IO
 open System.Text
-open Function
 
+open Functions
 
 [<EntryPoint>]
 
@@ -28,19 +30,18 @@ let main argv =
     pos <- pos + 586 + testoConsegna.Length
     let insCodice = inserisciTesto insTipo testoCodice pos
 
-    File.WriteAllText("out.xml", insCodice)
-
-    // try
-    //     File.WriteAllText(percorsoFileOut, insCodice)
-    // with
-    //     | :? UnauthorizedAccessException ->
-    //     printfn "Accesso negato al percorso '%s'." percorsoFileOut
-    //     | :? DirectoryNotFoundException ->
-    //         printfn "Il file specificato '%s' non esiste." percorsoFileOut
-    //     | :? IOException as ex ->
-    //         printfn "Errore di I/O durante la scrittura del file: %s" ex.Message
-    //     | ex ->
-    //         printfn "Si è verificato un errore inatteso: %s" ex.Message
+    
+    try
+        File.WriteAllText(Path.GetFileName(argv.[0]), insCodice)
+    with
+        | :? UnauthorizedAccessException ->
+            printfn "Accesso negato al percorso."
+        | :? DirectoryNotFoundException ->
+            printfn "Il file specificato non esiste."
+        | :? IOException as ex ->
+            printfn "Errore di I/O durante la scrittura del file: %s" ex.Message
+        | ex ->
+            printfn "Si è verificato un errore inatteso: %s" ex.Message
 
 
     0
