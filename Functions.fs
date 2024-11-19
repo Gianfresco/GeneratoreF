@@ -80,10 +80,12 @@ let letturaTesto (percorso:string) : string =
     with
         | :? IOException as e ->
             eprintfn "Errore di I/O"
-            e.Message
+            e.Message |> ignore
+            null
         | e ->
             eprintfn "Errore inatteso"
-            e.Message
+            e.Message |> ignore
+            null
 
 // funzione che legge il file dato come argomento e ne restuisce il contenuto come array di stringhe
 let letturaStringhe (percorso:string) : string[] =
