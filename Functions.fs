@@ -4,6 +4,7 @@ open System
 open System.IO
 open System.Text
 
+// funzione che fornisce il testo con i campi vuoti
 let getTemplate : string =
     let template = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <quiz>
@@ -71,6 +72,7 @@ let getTemplate : string =
 </quiz>"
     template
 
+// funzione che legge il file dato come argomento e ne restuisce il contenuto
 let letturaFile (percorso:string) : string =
     try
         let contenuto = File.ReadAllText(percorso)
@@ -83,19 +85,22 @@ let letturaFile (percorso:string) : string =
             eprintfn "Errore generale"
             e.Message
 
+// funzione per l'inserimento del testo (con controllo della posizione)
 let inserisciTesto (testo:string) (aggiunta:string) (posizione:int) : string =
     if posizione < 0 || posizione > testo.Length then
         printfn "Errore: posizione al di fuori dei limiti del testo"
         testo
     else
+        // spezza il testo originale nella posizione indicata e ne inserisce l'aggiunta in mezzo
         let sx = testo.Substring(0, posizione)
         let dx = testo.Substring(posizione)
         sx + aggiunta + dx
 
+// funzione che, a seconda dell'estesione del nome del file dato in argomento, restituisce il tipo di file
 let getTipoFile (file:string) : string =
     let estensione = Path.GetExtension(file)
     match estensione with
-    | ".txt" -> "UNCERTAIN"
+    | ".txt" -> "UNCERTAIN"           // incerto, perchè .txt poterbbe essere un directed_graph o un undirected_graph, quindi è necessario l'intervento dell'utente.
     | ".graph" -> "undirected_graph"
     | ".java" -> "java_program"
     | ".m" -> "octave_function"
