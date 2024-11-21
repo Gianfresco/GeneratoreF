@@ -1,16 +1,25 @@
 #!/bin/sh
 
-if test "$($#)" -lt 1
+consegne=$1
+shift
+codici=$2
+shift
+
+if test "$($#)" -lt 2
 then
-    echo "Argomenti isufficienti, uso: $0 <dir>"
+    echo "Argomenti isufficienti, uso: $0 <dirConsegne> <dirCodici>"
     exit 1
 fi
 
-if test ! -x "$(1)" -o ! -d  "$(1)"
+if test ! -x "$(consegne)" -o ! -d  "$(consegne)"
 then
-    echo "$1 non è una directory o non si hanno i permessi necessari"
+    echo "$consegne non è una directory o non si hanno i permessi necessari"
     exit 2
 fi
 
-
+if test ! -x "$(codici)" -o ! -d  "$(codici)"
+then
+    echo "$codici non è una directory o non si hanno i permessi necessari"
+    exit 2
+fi
 
