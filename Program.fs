@@ -6,18 +6,16 @@ open System.Text
 
 open Functions
 
-[<EntryPoint>]
-
-let main argv =
+let Program (fileConsegna:string) (fileCodice:string) =
 
     // lettura testi
-    let testoTitoloConsegna = (letturaStringhe argv.[0])
-    let testoCodice = (letturaTesto argv.[1])
+    let testoTitoloConsegna = (letturaStringhe fileConsegna)
+    let testoCodice = (letturaTesto fileCodice)
 
     // composizione tipo domanda a seconda del contenuto del codice solo in presenza di incertezze (terminanti con '_')
-    let mutable tipoDomanda = getTipoFile(argv.[1])
+    let mutable tipoDomanda = getTipoFile(fileCodice)
     if tipoDomanda.Equals("UNCERTAIN") then
-        printfn "Attenzione! '%s' è un file di testo: sarà necessaria la modifica manuale del linguaggio su Moodle." argv.[1]
+        printfn "Attenzione! '%s' è un file di testo: sarà necessaria la modifica manuale del linguaggio su Moodle." fileCodice
         tipoDomanda <- ""
     if tipoDomanda.EndsWith("_") then
         if testoCodice.Contains("main()") then          // usato per determinare se il codice è una funzione o un programma
@@ -45,7 +43,7 @@ let main argv =
     // scrittura testo completo su file XML
     // il nome del file è lo stesso del nome del file contenente la consegna
     try
-        File.WriteAllText((Path.GetFileNameWithoutExtension(argv.[0]) + ".xml"), insCodice)
+        File.WriteAllText((Path.GetFileNameWithoutExtension(fileConsegna) + ".xml"), insCodice)
     with
         | :? UnauthorizedAccessException ->
             printfn "Accesso negato al percorso."
