@@ -4,8 +4,8 @@
     <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Program.fs" />
     <Compile Include="Functions.fs" />
+    <Compile Include="Program.fs" />
     <Compile Include="Caller.fs" />
   </ItemGroup>
 </Project>

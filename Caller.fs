@@ -3,11 +3,7 @@ module Caller
 open System
 open System.IO
 open Program
-
-let controlloDirectory (percorso:string) =
-    if not (Directory.Exists percorso) then
-        eprintfn "Errore: %s non è accessibile o non è una directory." percorso
-        Environment.Exit 1 |> ignore
+open Functions
 
 [<EntryPoint>]
 let main args =
