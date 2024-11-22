@@ -6,7 +6,11 @@ open System.Text
 
 open Functions
 
-let Program (fileConsegna:string) (fileCodice:string) =
+let Program (fileConsegna:string, fileCodice:string) =
+
+    if String.IsNullOrWhiteSpace(fileConsegna) || String.IsNullOrWhiteSpace(fileCodice) then
+        eprintf "Parametri '%s' '%s' non validi." fileConsegna fileCodice
+        Environment.Exit 1
 
     // lettura testi
     let testoTitoloConsegna = (letturaStringhe fileConsegna)
@@ -53,6 +57,5 @@ let Program (fileConsegna:string) (fileCodice:string) =
             printfn "Errore di I/O durante la scrittura del file: %s" ex.Message
         | ex ->
             printfn "Si è verificato un errore inatteso: %s" ex.Message
-
 
     0

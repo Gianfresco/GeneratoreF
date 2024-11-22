@@ -52,9 +52,15 @@ let main args =
             | Some consegna, Some codice ->
                 try
                     // chiamata a "Program" con i due file
-                    Program consegna codice |> ignore
+                    let status = Program(consegna, codice)
+                    if status <> 0 then
+                        eprintf "La funzione è terminata con uno valore diverso da 0."
                 with
                     | :? ArgumentOutOfRangeException as e ->
+                        eprintfn "Troppi argomenti!"
+                        e.Message |> ignore
+                    | e ->
+                        eprintfn "Errore inatteso."
                         e.Message |> ignore
             | _ ->
                 printfn "Coppia %s non completa" nomeFile
