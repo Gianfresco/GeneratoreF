@@ -39,7 +39,11 @@ let main args =
 
         match fileConsegna, fileCodice with
             | Some consegna, Some codice ->
-                Program consegna codice |> ignore
+                try
+                    Program consegna codice |> ignore
+                with
+                    | :? ArgumentOutOfRangeException as e ->
+                        e.Message |> ignore
             | _ ->
                 printfn "Coppia %s non completa" nomeFile
             
