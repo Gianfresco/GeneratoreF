@@ -6,7 +6,7 @@ open System.Text
 
 open Functions
 
-let Program (fileConsegna:string, fileCodice:string) =
+let Program (fileConsegna:string, fileCodice:string, outputPath:string) =
 
     if String.IsNullOrWhiteSpace(fileConsegna) || String.IsNullOrWhiteSpace(fileCodice) then
         eprintf "Parametri '%s' '%s' non validi." fileConsegna fileCodice
@@ -47,7 +47,7 @@ let Program (fileConsegna:string, fileCodice:string) =
     // scrittura testo completo su file XML
     // il nome del file è lo stesso del nome del file contenente la consegna
     try
-        File.WriteAllText((Path.GetFileNameWithoutExtension(fileConsegna) + ".xml"), insCodice)
+        File.WriteAllText(outputPath + (Path.GetFileNameWithoutExtension(fileConsegna) + ".xml"), insCodice)
     with
         | :? UnauthorizedAccessException ->
             printfn "Accesso negato al percorso."

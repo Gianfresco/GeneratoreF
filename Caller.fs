@@ -7,13 +7,21 @@ open Functions
 
 [<EntryPoint>]
 let main args =
-    // controllo argomenti
-    if args.Length <> 2 then
-        printfn "Numero argomenti insufficiente."
+    // // controllo argomenti
+    // if args.Length <> 2 then
+    //     printfn "Numero argomenti insufficiente."
 
-    // assegnazione nomi agli argomenti
-    let dirConsegne = args.[0]
-    let dirCodici = args.[1]
+    // // assegnazione nomi agli argomenti
+    // let dirConsegne = args.[0]
+    // let dirCodici = args.[1]
+
+    // richiesta da terminale delle catelle di input e di output
+    printf "Inserire cartella contenente le consegne... "
+    let dirConsegne = Console.ReadLine().Trim()
+    printf "Inserire cartella contenente i codici... "
+    let dirCodici = Console.ReadLine().Trim()
+    printf "Inserire la cartella di output... "
+    let outputPath = Console.ReadLine().Trim()
 
     // controllo validità cartelle
     controlloDirectory dirConsegne
@@ -52,7 +60,7 @@ let main args =
             | Some consegna, Some codice ->
                 try
                     // chiamata a "Program" con i due file
-                    let status = Program(consegna, codice)
+                    let status = Program(consegna, codice, outputPath)
                     if status <> 0 then
                         eprintf "La funzione è terminata con uno valore diverso da 0."
                 with
