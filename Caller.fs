@@ -24,15 +24,6 @@ let main args =
             let outputPath = args.[2]
             (dirConsegne, dirCodici, outputPath)
 
-
-    // richiesta da terminale delle catelle di input e di output
-    printf "Inserire cartella contenente le consegne... "
-    let dirConsegne = Console.ReadLine().Trim()
-    printf "Inserire cartella contenente i codici... "
-    let dirCodici = Console.ReadLine().Trim()
-    printf "Inserire la cartella di output... "
-    let outputPath = Console.ReadLine().Trim()
-
     // controllo validità cartelle
     controlloDirectory dirConsegne
     controlloDirectory dirCodici
