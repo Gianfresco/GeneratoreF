@@ -1,0 +1,8 @@
+Gioco "Indovina il Numero"
+
+Scrivi un programma in Java che permette all'utente di giocare a "Indovina il Numero".
+Il programma deve generare casualmente un numero intero compreso tra 1 e 100.
+L'utente avrà diverse possibilità di indovinare il numero.
+Dopo ogni tentativo, il programma deve informare l'utente se il numero inserito è troppo alto, troppo basso o corretto.
+Il gioco continua finché l'utente non indovina il numero.
+Al termine del gioco, il programma deve visualizzare il numero totale di tentativi effettuati dall'utente.

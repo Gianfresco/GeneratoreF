@@ -1,0 +1,4 @@
+Verificatore di Numeri Primi
+
+Scrivi una funzione isPrime che accetta un intero come argomento e restituisce 1 se il numero è primo, oppure 0 altrimenti.
+La funzione isPrime verrà chiamata all'interno della funzione main().

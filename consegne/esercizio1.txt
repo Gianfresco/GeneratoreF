@@ -1,0 +1,5 @@
+Risolutore di Equazioni Quadratiche
+
+Scrivi un programma MATLAB che risolva un'equazione quadratica della forma ax^2+bx+c=0.
+Il programma deve chiedere all'utente di inserire i coefficienti a, b e c, quindi calcolare e visualizzare le radici reali dell'equazione.
+Se il discriminante è negativo, il programma deve indicare che le radici sono complesse.
